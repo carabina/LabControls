@@ -43,11 +43,11 @@ class ViewController: NSViewController {
     }
 
     @objc private func toggleDarkUI(notification: NSNotification) {
-        if let state = notification.object as? Int, mainWindow = self.mainWindow {
+        if let state = notification.object as? Int {
             if state == NSOnState {
-                mainWindow.setVibrantDarkAppearance()
+                mainWindow?.setVibrantDarkAppearance()
             } else {
-                mainWindow.setVibrantLightAppearance()
+                mainWindow?.setVibrantLightAppearance()
             }
         }
     }
