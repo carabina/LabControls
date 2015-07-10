@@ -8,6 +8,10 @@
 
 import Cocoa
 
+struct AppNotification {
+    static let ToggleDarkUI = "AppNotificationToggleDarkUI"
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -21,6 +25,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-
+    @IBAction func toggleDarkUI(sender: NSMenuItem?) {
+        if let menuItem = sender {
+            menuItem.state = menuItem.state == NSOffState ? NSOnState : NSOffState
+            NSNotificationCenter.defaultCenter().postNotificationName(AppNotification.ToggleDarkUI, object: menuItem.state)
+        }
+    }
 }
 
