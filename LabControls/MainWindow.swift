@@ -23,7 +23,7 @@ final class MainWindow: NSWindow {
     }
 
     func setVibrantDarkAppearance() {
-        appearance = NSAppearance(named:NSAppearanceNameVibrantDark)
+        appearance = NSAppearance(appearanceNamed: "CustomDarkAppearance", bundle: nil)
     }
 
     func setVibrantLightAppearance() {

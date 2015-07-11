@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4506E1FB1B5166A8007A1789 /* CustomDarkAppearance.car in Resources */ = {isa = PBXBuildFile; fileRef = 4506E1FA1B51669C007A1789 /* CustomDarkAppearance.car */; settings = {ASSET_TAGS = (); }; };
+		451310661B505B2C008E38D8 /* NLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451310651B505B2C008E38D8 /* NLButton.swift */; };
 		454FD3AD1B5034AA00D0B75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FD3AC1B5034AA00D0B75C /* AppDelegate.swift */; };
 		454FD3AF1B5034AA00D0B75C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FD3AE1B5034AA00D0B75C /* ViewController.swift */; };
 		454FD3B11B5034AA00D0B75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454FD3B01B5034AA00D0B75C /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		3E97B68580B2C9258F352E57 /* Pods-LabControls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabControls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabControls/Pods-LabControls.debug.xcconfig"; sourceTree = "<group>"; };
+		4506E1FA1B51669C007A1789 /* CustomDarkAppearance.car */ = {isa = PBXFileReference; lastKnownFileType = file; path = CustomDarkAppearance.car; sourceTree = "<group>"; };
+		451310651B505B2C008E38D8 /* NLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLButton.swift; sourceTree = "<group>"; };
 		454FD3A91B5034AA00D0B75C /* LabControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		454FD3AC1B5034AA00D0B75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		454FD3AE1B5034AA00D0B75C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		451310641B505AC2008E38D8 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				451310651B505B2C008E38D8 /* NLButton.swift */,
+			);
+			name = "Custom Controls";
+			sourceTree = "<group>";
+		};
+		452A8A201B5155BE000145B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4506E1FA1B51669C007A1789 /* CustomDarkAppearance.car */,
+				454FD3B51B5034AA00D0B75C /* Info.plist */,
+				454FD3B21B5034AA00D0B75C /* Main.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		454FD3A01B5034AA00D0B75C = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +92,12 @@
 		454FD3AB1B5034AA00D0B75C /* LabControls */ = {
 			isa = PBXGroup;
 			children = (
-				454FD3B51B5034AA00D0B75C /* Info.plist */,
 				454FD3AC1B5034AA00D0B75C /* AppDelegate.swift */,
 				4585A0DD1B503883000A7BF2 /* MainWindow.swift */,
 				454FD3AE1B5034AA00D0B75C /* ViewController.swift */,
 				454FD3B01B5034AA00D0B75C /* Assets.xcassets */,
-				454FD3B21B5034AA00D0B75C /* Main.storyboard */,
+				451310641B505AC2008E38D8 /* Custom Controls */,
+				452A8A201B5155BE000145B8 /* Resources */,
 			);
 			path = LabControls;
 			sourceTree = "<group>";
@@ -150,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				454FD3B11B5034AA00D0B75C /* Assets.xcassets in Resources */,
+				4506E1FB1B5166A8007A1789 /* CustomDarkAppearance.car in Resources */,
 				454FD3B41B5034AA00D0B75C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +235,7 @@
 				454FD3AF1B5034AA00D0B75C /* ViewController.swift in Sources */,
 				4585A0DE1B503883000A7BF2 /* MainWindow.swift in Sources */,
 				454FD3AD1B5034AA00D0B75C /* AppDelegate.swift in Sources */,
+				451310661B505B2C008E38D8 /* NLButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -303,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};

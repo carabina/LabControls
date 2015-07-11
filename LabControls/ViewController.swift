@@ -11,12 +11,18 @@ import PureLayout
 
 class ViewController: NSViewController {
 
-    weak var mainWindow: MainWindow?
+    weak var mainWindow: MainWindow? {
+        didSet {
+            resetMainWindow()
+        }
+    }
+
     private var didSetupConstraints = false
 
-    private lazy var okButton: NSButton = {
-        let obj = NSButton(forAutoLayout: ())
+    private lazy var okButton: NLButton = {
+        let obj = NLButton(forAutoLayout: ())
 
+        obj.setButtonType(.MomentaryLightButton)
         obj.bezelStyle = .RoundedBezelStyle
         obj.title = "Ok"
         obj.keyEquivalent = "\r"
@@ -24,17 +30,18 @@ class ViewController: NSViewController {
         return obj
     }()
 
-    private lazy var cancelButton: NSButton = {
-        let obj = NSButton(forAutoLayout: ())
+    private lazy var cancelButton: NLButton = {
+        let obj = NLButton(forAutoLayout: ())
 
+        obj.setButtonType(.MomentaryLightButton)
         obj.bezelStyle = .RoundedBezelStyle
         obj.title = "Cancel"
 
         return obj
     }()
 
-    private lazy var launchToggleButton: NSButton = {
-        let obj = NSButton(forAutoLayout: ())
+    private lazy var launchToggleButton: NLButton = {
+        let obj = NLButton(forAutoLayout: ())
 
         obj.setButtonType(.SwitchButton)
         obj.title = "Launch at startup"
@@ -46,8 +53,8 @@ class ViewController: NSViewController {
         let obj = NSPopUpButton(forAutoLayout: ())
 
         obj.menu?.removeAllItems()
-
-        for item in ["One", "Two", "Three"] {
+        
+        for item in ["Один, One, Un", "Два, Two, Dous", "Три, Three, Tres"] {
             obj.menu?.addItemWithTitle(item, action: nil, keyEquivalent: "")
         }
 
@@ -75,9 +82,8 @@ class ViewController: NSViewController {
     }
 
     override func viewWillAppear() {
-        if let mainWindow = view.window as? MainWindow {
-            self.mainWindow = mainWindow
-            resetMainWindow()
+        if mainWindow == nil {
+            mainWindow = view.window as? MainWindow
         }
     }
 
