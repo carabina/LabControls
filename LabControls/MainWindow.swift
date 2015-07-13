@@ -22,15 +22,19 @@ final class MainWindow: NSWindow {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setVibrantDarkAppearance() {
+    @available(OSX 10.11, *) func setCustomDarkAppearance() {
         appearance = NSAppearance(appearanceNamed: "CustomDarkAppearance", bundle: nil)
     }
 
+    func setVibrantDarkAppearance() {
+        appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+    }
+
     func setVibrantLightAppearance() {
-        appearance = NSAppearance(named:NSAppearanceNameVibrantLight)
+        appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
     }
 
     func setAquaAppearance() {
-        appearance = NSAppearance(named:NSAppearanceNameAqua)
+        appearance = NSAppearance(named: NSAppearanceNameAqua)
     }
 }
