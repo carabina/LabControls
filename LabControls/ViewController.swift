@@ -24,8 +24,10 @@ class ViewController: NSViewController {
 
         obj.setButtonType(.MomentaryLightButton)
         obj.bezelStyle = .RoundedBezelStyle
-        obj.title = "Ok"
+        obj.title = "OK"
         obj.keyEquivalent = "\r"
+        obj.target = self
+        obj.action = Selector("okPressed:")
 
         return obj
     }()
@@ -149,10 +151,24 @@ class ViewController: NSViewController {
     @objc private func toggleDarkUI(notification: NSNotification) {
         if let state = notification.object as? Int {
             if state == NSOnState {
-                mainWindow?.setVibrantDarkAppearance()
+                mainWindow?.setCustomDarkAppearance()
             } else {
                 mainWindow?.setVibrantLightAppearance()
             }
+        }
+    }
+    
+    @IBAction func okPressed(sender: AnyObject) {
+        if let mainWindow = mainWindow {
+            let alert = NSAlert()
+            
+            alert.messageText = "Error Gravissimus"
+            alert.informativeText = "All your bases are belong to us!"
+
+            alert.window.appearance = mainWindow.appearance
+            alert.window.contentView.wantsLayer = true
+
+            alert.runModal()
         }
     }
 }
