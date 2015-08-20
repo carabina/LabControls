@@ -13,7 +13,7 @@ final class MainWindow: NSWindow {
     override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, `defer` flag: Bool) {
         super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, `defer`: flag)
 
-        contentView.wantsLayer = true
+        contentView?.wantsLayer = true
         titlebarAppearsTransparent = true
         movableByWindowBackground = true
     }

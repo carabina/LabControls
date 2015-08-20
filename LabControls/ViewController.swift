@@ -166,7 +166,7 @@ class ViewController: NSViewController {
             alert.informativeText = "All your bases are belong to us!"
 
             alert.window.appearance = mainWindow.appearance
-            alert.window.contentView.wantsLayer = true
+            alert.window.contentView?.wantsLayer = true
 
             alert.runModal()
         }
